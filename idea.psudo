@@ -1,0 +1,13 @@
+def new_user()
+    name = rand_clr() + rand_wrd 
+    if in_db(name)
+        name = name + rand_wrd
+    while in_db(name)
+        name = name + rand_int(0,9)
+    login = name + sha512(rand_word + rand_int(0,99999))
+
+flags = [ name:code]
+/*    
+db format:
+login + flag_names
+*/
